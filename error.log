@@ -1,0 +1,21 @@
+D:\LenovoSoftstore\Install\miniconda3\envs\LangChainStudy\Lib\site-packages\langchain_nvidia_ai_endpoints\_common.py:243: UserWarning: Found z-ai/glm4.7 in available_models, but type is unknown and inference may fail.
+  warnings.warn(
+D:\LenovoSoftstore\Install\miniconda3\envs\LangChainStudy\Lib\site-packages\langchain_nvidia_ai_endpoints\chat_models.py:1091: UserWarning: Model 'z-ai/glm4.7' is not known to support tools. Your tool binding may fail at inference time.
+  warnings.warn(
+response: {'messages': [HumanMessage(content='请提取以下文本中的姓名、邮箱和手机号：姓名：张三，邮箱：zhangsan@example.com，手机号：13812345678', additional_kwargs={}, response_metadata={}, id='00ea7839-5d1a-44e5-9b48-93b089138f47'), AIMessage(content='', additional_kwargs={'reasoning_content': '用户要求我从文本中提取姓名、邮箱和手机号。文本是：\n"姓名：张三，邮箱：zhangsan@example.com，手机号：13812345678"\n\n我可以直接提取：\n- 姓名：张三\n- 邮箱：zhangsan@example.com\n- 手机号：13812345678\n\n现在我有一个PersonInfo函数可以使用，它需要name、email和phone这三个必需参数，我正好都有了这些信息。我应该调用这个函数来处理这些信息。', '_reasoning_api_fields': ['reasoning_content'], 'tool_calls': [{'id': 'call_872265570ba34b3f962283fb', 'index': 0, 'type': 'function', 'function': {'name': 'PersonInfo', 'arguments': '{"name": "张三", "email": "zhangsan@example.com", "phone": "13812345678"}'}}]}, response_metadata={'role': 'assistant', 'content': None, 'reasoning_content': '用户要求我从文本中提取姓名、邮箱和手机号。文本是：\n"姓名：张三，邮箱：zhangsan@example.com，手机号：13812345678"\n\n我可以直接提取：\n- 姓名：张三\n- 邮箱：zhangsan@example.com\n- 手机号：13812345678\n\n现在我有一个PersonInfo函数可以使用，它需要name、email和phone这三个必需参数，我正好都有了这些信息。我应该调用这个函数来处理这些信息。', 'tool_calls': [{'id': 'call_872265570ba34b3f962283fb', 'index': 0, 'type': 'function', 'function': {'name': 'PersonInfo', 'arguments': '{"name": "张三", "email": "zhangsan@example.com", "phone": "13812345678"}'}}], 'token_usage': {'prompt_tokens': 228, 'total_tokens': 373, 'completion_tokens': 145, 'prompt_tokens_details': None, 'reasoning_tokens': 0}, 'finish_reason': 'tool_calls', 'model_name': 'z-ai/glm4.7'}, id='lc_run--019d0ef1-7342-71c2-b63e-b02d861e4f25-0', tool_calls=[{'name': 'PersonInfo', 'args': {'name': '张三', 'email': 'zhangsan@example.com', 'phone': '13812345678'}, 'id': 'call_872265570ba34b3f962283fb', 'type': 'tool_call'}], invalid_tool_calls=[], usage_metadata={'input_tokens': 228, 'output_tokens': 145, 'total_tokens': 373}, role='assistant'), ToolMessage(content='对象提取完成!', name='PersonInfo', id='5a5704d4-d14c-4ba2-850b-e231787aa4a8', tool_call_id='call_872265570ba34b3f962283fb')], 'structured_response': PersonInfo(name='张三', email='zhangsan@example.com', phone='13812345678')}
+================================ Human Message =================================
+
+请提取以下文本中的姓名、邮箱和手机号：姓名：张三，邮箱：zhangsan@example.com，手机号：13812345678
+================================== Ai Message ==================================
+Tool Calls:
+  PersonInfo (call_872265570ba34b3f962283fb)
+ Call ID: call_872265570ba34b3f962283fb
+  Args:
+    name: 张三
+    email: zhangsan@example.com
+    phone: 13812345678
+================================= Tool Message =================================
+Name: PersonInfo
+
+对象提取完成!
+name='张三' email='zhangsan@example.com' phone='13812345678'

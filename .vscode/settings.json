@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "D:/LenovoSoftstore/Install/miniconda3/envs/LangChainStudy/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.condaPath": "D:/LenovoSoftstore/Install/miniconda3/Scripts/conda.exe",
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}"
+    }
+}
